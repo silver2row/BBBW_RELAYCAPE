@@ -30,14 +30,7 @@ int main()
         perror("Unable to open /dev/gpio/relay-jp3/active_low");
         exit(1);
     }
-/*
-    if (write(fd, "24", 2) != 2) {
-        perror("Error writing to /sys/class/gpio/export");
-        exit(1);
-    }
 
-    close(fd);
-*/
     // Set the pin to be an output by writing "out" to /sys/class/gpio/gpio108/direction
 
     fd = open("/dev/gpio/relay-jp3/direction", O_WRONLY);
@@ -77,21 +70,6 @@ int main()
 
     close(fd);
 
-    // Unexport the pin by writing to /sys/class/gpio/unexport
-
-/*    fd = open("/dev/gpio/relay-jp3", O_WRONLY);
-    if (fd == -1) {
-        perror("Unable to open /sys/class/gpio/unexport");
-        exit(1);
-    }
-
-    if (write(fd, "24", 2) != 2) {
-        perror("Error writing to /sys/class/gpio/unexport");
-        exit(1);
-    }
-
-    close(fd);
-*/
     // And exit
     return 0;
 }
