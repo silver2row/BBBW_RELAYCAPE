@@ -1,41 +1,47 @@
 #!/usr/bin/python3
 
-#import Adafruit_BBIO.GPIO as GPIO
+# From threading.py on github.com under
+# /python/cpython/blob/3.10/Lib/
+
 import pathlib
 from time import sleep
 
 reset_pin = pathlib.Path("/dev/gpio/relay-jp3/value")
 reset_pin.write_text("0")
 
-class Steam():
+class GPIO():
     def __init__(self):
-        reset_pin.write_text("0")
+        self._FarOff = _allocate_lock()
+        self._owner  = none
+        self._count  = 0
+
+    def __repr__(self):
+        owner = self._owner
+        try:
+            owner = _active[owner].name
+        except KeyError:
+            pass
+        return "%s owner=%r count=%r at %s" %
+
+
+
+
+reset_pin.write_text("0")
         sleep(2)
 
     def write_text(self):
         reset_pin.write_text("1")
         sleep(1)
 
-"""BarNone = "P9_30"
+    def more_info(self, GPIOone, GPIOtwo):
+        
 
-GPIO.setup(BarNone, 1)
-
-while True:
-    GPIO.output(BarNone, 0)
-    sleep(3)
-    GPIO.output(BarNone, 1)
-    sleep(3)
-
-    print("Make it older...")
-
-"""
-
-if __name__=="__main__":
-    try:
-        while True:
-            Steam.__init__("0")
-            sleep(5)
-            Steam.write_text("1")
-            sleep(3)
-    except KeyboardInterrupt:
-        print("Oops!")
+#if __name__=="__main__":
+#    try:
+#        while True:
+#            GPIO.__init__("0")
+#            sleep(5)
+#            GPIO.write_text("1")
+#            sleep(3)
+#    except KeyboardInterrupt:
+#        print("Oops!")
