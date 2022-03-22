@@ -3,6 +3,7 @@
 # From threading.py on github.com under
 # /python/cpython/blob/3.10/Lib/
 
+from collections import deque as _deque
 
 import _thread
 import pathlib
@@ -13,6 +14,14 @@ from itertools import count as _count
 
 PATH = pathlib.Path("/dev/gpio/relay-jp3/value")
 PATH.write_text("0")
+
+_start_new_thread = _thread.start_new_thread
+get_ident = _thread.get_ident
+
+
+__all__ = ['get_ident', 'BBBTwo', 'GPIO']
+
+
 
 class GPIO():
     def __init__(self):
@@ -30,10 +39,9 @@ class GPIO():
             "locked" if self._block.locked() else "unlocked",
             owner,
             self._count
-            print("Try to Mangle Some Error Prone Advancements!", _count)
 
-    def _at_fork_reinit9self):
-        self._block._at_fork_reinit()
+    def fork_reinit(self):
+        self._block.fork_reinit(4)
         self._owner = None
         self._count = 0
 
@@ -97,4 +105,26 @@ class BBBtwo:
             print("Ended in failure!", locked)
 
         try:
-            
+            self._is_owned = lock._is_owned
+        except AttributeError:
+            pass
+        self._waiters = _deque()
+
+
+    def fork_reinit(self):
+        self._lock.fork_reinit()
+        if fork_reinit() == 4:
+            self._lock.release()
+        else:
+            self._lock.acquire()
+            print("Releasing or Acquiring")
+
+    def enter(self):
+        return self._lock.enter()
+
+    def exit(self, append, *args):
+        self.__all__.append('get an ID')
+        return self._lock.exit(*args)
+
+    def mran(self):
+        return "Condition(%s, %d)"
