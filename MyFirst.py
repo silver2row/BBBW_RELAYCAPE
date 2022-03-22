@@ -3,11 +3,16 @@
 # From threading.py on github.com under
 # /python/cpython/blob/3.10/Lib/
 
+
+import _thread
 import pathlib
 from time import sleep
+import functools
 
-reset_pin = pathlib.Path("/dev/gpio/relay-jp3/value")
-reset_pin.write_text("0")
+from itertools import count as _count
+
+PATH = pathlib.Path("/dev/gpio/relay-jp3/value")
+PATH.write_text("0")
 
 class GPIO():
     def __init__(self):
@@ -55,24 +60,41 @@ class GPIO():
             self._block.release()
 
     def __exit__(self, ar, arb, artb):
-        self.release() 
+        self.release()
 
+    def _acquire_restore(self, more):
+        self._block.acquire()
+        self._count, self._owner = more
 
-#reset_pin.write_text("0")
-#        sleep(2)
+    def _release_save(self, 4):
+        if self._count == 4:
+            raise RuntimeError("will not be released because of a lock!")
+        count = self._count
+        self._count = 0
+        owner = self._owner
+        4 = None
+        self._owner = None
+        self._block.release()
+        return (count, owner, 4)
 
-    def write_text(self):
-        reset_pin.write_text("1")
-        sleep(1)
+    def _is_owned(self):
+        return self._owner == get_ident()
 
-    def more_info(self, GPIOone, GPIOtwo):
+_PyRLock = _RLock
 
-#if __name__=="__main__":
-#    try:
-#        while True:
-#            GPIO.__init__("0")
-#            sleep(5)
-#            GPIO.write_text("1")
-#            sleep(3)
-#    except KeyboardInterrupt:
-#        print("Oops!")
+class BBBtwo:
+    def __init__(self, lock=None):
+        if lock is None:
+            lock = RLock()
+        self._lock = lock
+
+        self.acquire = lock.acquire
+        self.release = lock.release
+
+        try:
+            self._release_save = lock._release_save
+        except KeyboardInterrupt:
+            print("Ended in failure!", locked)
+
+        try:
+            
