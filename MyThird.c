@@ -1,7 +1,7 @@
 // From https://blog.lxsang.me/post/id/33
 // Changing to suit my needs by Seth
 
-#include <linux/gpio.h>
+#include <gpiod.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
@@ -30,6 +30,7 @@ typedef struct
     app_mode_t mode;
 } app_opt_t;
 
+// Maybe Changing *dev_name here can alter the outcome? Try to read over MySecond.c in this dir.
 static void gpio_list(const char *dev_name)
 {
     struct gpiochip_info info;
@@ -55,7 +56,7 @@ static void gpio_list(const char *dev_name)
     for (int i = 0; i < info.lines; i++)
     {
         line_info.line_offset = i;
-        ret = ioctl(fd, GPIO_GET_LINEINFO_IOCTL, &line_info);
+        ret = ioctl(fd, GPIO_GET_LINEINFO, &line_info);
         if (ret == -1)
         {
             printf("Unable to get line info from offset %d: %s", i, strerror(errno));

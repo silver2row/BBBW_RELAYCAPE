@@ -4,6 +4,9 @@
   Exits when CTRL-C is typed.
 */
 
+// This source can be found here: https://github.com/tranter/blogs/blob/master/gpio/part9/example.c
+// It has been changed by me, Seth, to handle the RelayCape and BBBW Linux based SiP...
+
 #include <gpiod.h>
 #include <stdio.h>
 #include <unistd.h>
