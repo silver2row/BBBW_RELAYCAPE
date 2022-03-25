@@ -16,6 +16,8 @@ int main(int argc, char **argv)
   const char *chipname = "gpiochip3";
   struct gpiod_chip *chip;
   struct gpiod_line *lineLED;    // a LED from relay-jp3
+                                 // located at /dev/gpio/relay-jp3
+                                 // This is one way to grant access
 
   int i, ret;
 
