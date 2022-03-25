@@ -6,6 +6,8 @@ a BeagleBone Black with RelayCape.
 Will toggle physical pin 3.16 or P9.30 or gpio108 (which is gpio3_16 and it is 32 * 3 + 12 = 108) on the
 RelayCape attached to the BBBW for a change in seconds and then exits on CTRL-C.
 
+The original source can be found here by Mr. Tranter: https://github.com/tranter/blogs/blob/master/gpio/part5/demo1.c
+
 Jeff Tranter <jtranter@ics.com>
 
 and...Seth. I changed the source a bit to fit the BBBW and RelayCape! SysFS!
