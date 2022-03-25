@@ -1,6 +1,7 @@
 // From https://blog.lxsang.me/post/id/33
 // Changing to suit my needs by Seth
 
+#include <linux/gpio.h>
 #include <gpiod.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -56,7 +57,7 @@ static void gpio_list(const char *dev_name)
     for (int i = 0; i < info.lines; i++)
     {
         line_info.line_offset = i;
-        ret = ioctl(fd, GPIO_GET_LINEINFO, &line_info);
+        ret = ioctl(fd, GPIO_GET_LINEINFO_IOCTL, &line_info);
         if (ret == -1)
         {
             printf("Unable to get line info from offset %d: %s", i, strerror(errno));
@@ -68,7 +69,7 @@ static void gpio_list(const char *dev_name)
                    line_info.name,
                    line_info.consumer,
                    (line_info.flags & GPIOLINE_FLAG_IS_OUT) ? "OUTPUT" : "INPUT",
-                   (line_info.flags & GPIOLINE_FLAG_ACTIVE_LOW) ? "ACTIVE_LOW" : "ACTIVE_HIGHT",
+                   (line_info.flags & GPIOLINE_FLAG_ACTIVE_LOW) ? "ACTIVE_LOW" : "ACTIVE_HIGH",
                    (line_info.flags & GPIOLINE_FLAG_OPEN_DRAIN) ? "OPEN_DRAIN" : "...",
                    (line_info.flags & GPIOLINE_FLAG_OPEN_SOURCE) ? "OPENSOURCE" : "...",
                    (line_info.flags & GPIOLINE_FLAG_KERNEL) ? "KERNEL" : "");
