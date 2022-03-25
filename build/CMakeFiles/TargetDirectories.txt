@@ -1,3 +1,0 @@
-/home/debian/BBBW_RELAYCAPE/build/CMakeFiles/MySecond.dir
-/home/debian/BBBW_RELAYCAPE/build/CMakeFiles/edit_cache.dir
-/home/debian/BBBW_RELAYCAPE/build/CMakeFiles/rebuild_cache.dir
