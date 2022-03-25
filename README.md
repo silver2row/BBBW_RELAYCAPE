@@ -75,3 +75,9 @@ disable_uboot_overlay_audio=1
 enable_uboot_cape_universal=1
 
 ```
+
+The file, MyThird.c, is a WIP too...
+
+1. I am currently trying to adjust it to suit the am335x on the BeagleBone Black Wireless
+2. The RelayCape is also in play here
+3. Currently, my system is sort of broken. So, additional steps may need to take place
