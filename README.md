@@ -5,7 +5,7 @@
 # BBBW_RELAYCAPE
 More Source for the Beagleboard.org BBBW and RelayCape
 
-` sudo apt install libtool autoconf-archive cmake make gcc g++ git python-is-python2 pkg-config `
+` sudo apt install libtool autoconf-archive cmake make gcc g++ git python-is-python2 pkg-config linux-headers-$(uname -r) `
 
 ```
 
