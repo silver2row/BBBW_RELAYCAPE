@@ -23,6 +23,9 @@ If this build does not work and if it fails due to specific errors, please try t
 
 ` sudo apt install gpiod libgpiod-dev `
 
+# WIP
+` THE USE OF LIBGPIOD on the AM335x/BEAGLEBONE BLACK WIRELESS May BREAK THE BOARD! `
+
 Now, once all the above is done, one can use the source. If I am missing anytyhing, please tell me.
 
 Seth
