@@ -4,4 +4,7 @@
 2. This issue pertains to libgpiod on the am335x
 3. I tried to do what I could but I do not build the images
 
+# This kernel config. issue on my current issue was related to
+# my lack of having libgpiod-dev installed on my system!
+
 ` nice `
