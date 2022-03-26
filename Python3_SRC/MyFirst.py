@@ -20,7 +20,7 @@ class Gpio:
     def set( self, value ):
         self._value_path.write_text( str( value ) )
 
-relay1 = Gpio( 'relay-jp1' )
+relay1 = Gpio( 'relay-jp3' )
 
 relay1.set( 1 )
 sleep( 1 )
