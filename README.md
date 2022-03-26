@@ -19,6 +19,10 @@ sudo make install
 
 ```
 
+If this build does not work and if it fails due to specific errors, please try this:
+
+` sudo apt install gpiod libgpiod-dev `
+
 Now, once all the above is done, one can use the source. If I am missing anytyhing, please tell me.
 
 Seth
