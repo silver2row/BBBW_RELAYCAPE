@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/MySecond.dir/MySecond.c.o -o MySecond  -llinux/gpio 
+/usr/bin/cc CMakeFiles/MySecond.dir/MySecond.c.o -o MySecond  -lgpiod 
