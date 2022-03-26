@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/debian/BBBW_RELAYCAPE
+CMAKE_SOURCE_DIR = /home/debian/BBBW_RELAYCAPE/GPIOD_SRC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/debian/BBBW_RELAYCAPE/build
+CMAKE_BINARY_DIR = /home/debian/BBBW_RELAYCAPE/GPIOD_SRC/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/MySecond.dir/clean
 CMakeFiles/MySecond.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySecond.dir/build.make CMakeFiles/MySecond.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySecond.dir/build.make CMakeFiles/MySecond.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/debian/BBBW_RELAYCAPE/build/CMakeFiles --progress-num=1,2 "Built target MySecond"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/debian/BBBW_RELAYCAPE/GPIOD_SRC/build/CMakeFiles --progress-num=1,2 "Built target MySecond"
 .PHONY : CMakeFiles/MySecond.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MySecond.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/debian/BBBW_RELAYCAPE/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/debian/BBBW_RELAYCAPE/GPIOD_SRC/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MySecond.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/debian/BBBW_RELAYCAPE/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/debian/BBBW_RELAYCAPE/GPIOD_SRC/build/CMakeFiles 0
 .PHONY : CMakeFiles/MySecond.dir/rule
 
 # Convenience name for target.

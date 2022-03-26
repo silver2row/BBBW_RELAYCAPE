@@ -1,4 +1,4 @@
-# Install script for directory: /home/debian/BBBW_RELAYCAPE
+# Install script for directory: /home/debian/BBBW_RELAYCAPE/GPIOD_SRC
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/debian/BBBW_RELAYCAPE/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/debian/BBBW_RELAYCAPE/GPIOD_SRC/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

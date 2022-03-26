@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/debian/BBBW_RELAYCAPE/MySecond.c" "CMakeFiles/MySecond.dir/MySecond.c.o" "gcc" "CMakeFiles/MySecond.dir/MySecond.c.o.d"
+  "/home/debian/BBBW_RELAYCAPE/GPIOD_SRC/MySecond.c" "CMakeFiles/MySecond.dir/MySecond.c.o" "gcc" "CMakeFiles/MySecond.dir/MySecond.c.o.d"
   )
 
 # Targets to which this target links.
