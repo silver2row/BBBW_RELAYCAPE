@@ -27,8 +27,8 @@ P.S. This is done with a specific kernel and image from beagleboard.org.
 
 ```
 
-kernel: 5.10.100-ti-r40
-cat /etc/dogtag: BeagleBoard.org Debian Bullseye IoT Image 2022-03-12
+kernel: 5.10.100-ti-r37
+cat /etc/dogtag: BeagleBoard.org Debian Bullseye Minimal Image 2022-03-02
 
 ```
 
