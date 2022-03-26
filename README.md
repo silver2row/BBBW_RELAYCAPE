@@ -39,10 +39,9 @@ cat /etc/dogtag: BeagleBoard.org Debian Bullseye Minimal Image 2022-03-02
 Also...I have a /boot/uEnv.txt file that looks like this idea:
 
 ```
-
 #Docs: http://elinux.org/Beagleboard:U-boot_partitioning_layout_2.0
 
-uname_r=5.10.100-ti-r40
+uname_r=5.10.100-ti-r37
 #uuid=
 #dtb=
 
@@ -52,8 +51,8 @@ uname_r=5.10.100-ti-r40
 enable_uboot_overlays=1
 ###
 ###Overide capes with eeprom
-#uboot_overlay_addr0=BBORG_RELAY-00A2.dtbo
-#uboot_overlay_addr1=/home/debian/overlay-utils/BBORG_RELAY-00A2.dtbo
+#uboot_overlay_addr0=<file0>.dtbo
+#uboot_overlay_addr1=<file1>.dtbo
 #uboot_overlay_addr2=<file2>.dtbo
 #uboot_overlay_addr3=<file3>.dtbo
 ###
@@ -67,14 +66,20 @@ enable_uboot_overlays=1
 #dtb_overlay=<file8>.dtbo
 ###
 ###Disable auto loading of virtual capes (emmc/video/wireless/adc)
-disable_uboot_overlay_emmc=1
-disable_uboot_overlay_video=1
-disable_uboot_overlay_audio=1
+#disable_uboot_overlay_emmc=1
+#disable_uboot_overlay_video=1
+#disable_uboot_overlay_audio=1
 #disable_uboot_overlay_wireless=1
 #disable_uboot_overlay_adc=1
 ###
 ###Cape Universal Enable
 enable_uboot_cape_universal=1
+###
+###Debug: disable uboot autoload of Cape
+#disable_uboot_overlay_addr0=1
+#disable_uboot_overlay_addr1=1
+#disable_uboot_overlay_addr2=1
+#disable_uboot_overlay_addr3=1
 
 ```
 
