@@ -45,49 +45,14 @@ cat /etc/dogtag: BeagleBoard.org Debian Bullseye Minimal Image 2022-03-02
 Also...I have a /boot/uEnv.txt file that looks like this idea:
 
 ```
-#Docs: http://elinux.org/Beagleboard:U-boot_partitioning_layout_2.0
 
-uname_r=5.10.100-ti-r37
-#uuid=
-#dtb=
+one can use this item of interest in promoting a .dtsi on the BBB/BBBW/am335x board:
 
-###U-Boot Overlays###
-###Documentation: http://elinux.org/Beagleboard:BeagleBoneBlack_Debian#U-Boot_Overlays
-###Master Enable
-enable_uboot_overlays=1
-###
-###Overide capes with eeprom
-#uboot_overlay_addr0=<file0>.dtbo
-#uboot_overlay_addr1=<file1>.dtbo
-#uboot_overlay_addr2=<file2>.dtbo
-#uboot_overlay_addr3=<file3>.dtbo
-###
-###Additional custom capes
-#uboot_overlay_addr4=<file4>.dtbo
-#uboot_overlay_addr5=<file5>.dtbo
-#uboot_overlay_addr6=<file6>.dtbo
-#uboot_overlay_addr7=<file7>.dtbo
-###
-###Custom Cape
-#dtb_overlay=<file8>.dtbo
-###
-###Disable auto loading of virtual capes (emmc/video/wireless/adc)
-#disable_uboot_overlay_emmc=1
-#disable_uboot_overlay_video=1
-#disable_uboot_overlay_audio=1
-#disable_uboot_overlay_wireless=1
-#disable_uboot_overlay_adc=1
-###
-###Cape Universal Enable
-enable_uboot_cape_universal=1
-###
-###Debug: disable uboot autoload of Cape
-#disable_uboot_overlay_addr0=1
-#disable_uboot_overlay_addr1=1
-#disable_uboot_overlay_addr2=1
-#disable_uboot_overlay_addr3=1
+https://github.com/mvduin/overlay-utils/blob/master/BBORG_RELAY-00A2.dtsi
 
 ```
+
+That .dtsi file works w/ the RelayCape and you might have to disable cape_universal!
 
 The file, MyThird.c, is a WIP too...
 
