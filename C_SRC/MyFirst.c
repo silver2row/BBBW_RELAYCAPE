@@ -1,16 +1,16 @@
 /*
 
-Example of programming GPIO from C using the sysfs interface on
-a BeagleBone Black with RelayCape.
+This is an example of programming GPIO from C using the sysfs interface on
+a BeagleBone Black/BeagleBone Black Wireless or other am335x board with RelayCape.
 
-Will toggle physical pin 3.16 or P9.30 or gpio108 (which is gpio3_16 and it is 32 * 3 + 12 = 108) on the
+We will toggle physical pin 3.16 or P9.30 or gpio108 (which is gpio3_16 and it is 32 * 3 + 12 = 108) on the
 RelayCape attached to the BBBW for a change in seconds and then exits on CTRL-C.
 
 The original source can be found here by Mr. Tranter: https://github.com/tranter/blogs/blob/master/gpio/part5/demo1.c
 
 Jeff Tranter <jtranter@ics.com>
 
-and...Seth. I changed the source a bit to fit the BBBW and RelayCape! SysFS!
+and...Seth. I changed the source a bit to fit the BBBW and RelayCape while using sysfs.
 
 */
 
@@ -34,6 +34,8 @@ int main()
     }
 
     // Set the pin to be an output by writing "out" to /sys/class/gpio/gpio108/direction
+    // In this case, it is /dev/gpio/relay-jp3/direction b/c of the .dtsi file and us
+    // not utilizing the specific .kernel .dtbo files available from beagleboard.org.
 
     fd = open("/dev/gpio/relay-jp3/direction", O_WRONLY);
     if (fd == -1) {
@@ -67,7 +69,7 @@ int main()
             perror("Error writing to /dev/gpio/relay-jp3/value");
             exit(1);
         }
-        usleep(500000);
+        usleep(50000);
     }
 
     close(fd);
