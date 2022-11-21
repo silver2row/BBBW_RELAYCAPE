@@ -1,11 +1,16 @@
 /*
-  Simple gpiod example of toggling a LED connected a gpio line from
+  Simple gpiod example of toggling a LED connected to a gpio line from
   the BeagleBone Black Wireless and RelayCape.
   Exits when CTRL-C is typed.
 */
 
+// Also, I want to mention help from #beagle on IRC w/ the repo. that is used.
+
 // This source can be found here: https://github.com/tranter/blogs/blob/master/gpio/part9/example.c
 // It has been changed by me, Seth, to handle the RelayCape and BBBW Linux based SiP...
+
+// kernel: 5.10.100-ti-r37
+// image : BeagleBoard.org Debian Bullseye Minimal Image 2022-03-02
 
 //#include <linux/gpio.h>
 #include <gpiod.h>
