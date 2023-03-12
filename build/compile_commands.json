@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/gortsh/BBBW_RELAYCAPE/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -g -o CMakeFiles/MySecond.dir/MySecond.c.o -c /home/gortsh/BBBW_RELAYCAPE/GPIOD_SRC/MySecond.c",
+  "file": "/home/gortsh/BBBW_RELAYCAPE/GPIOD_SRC/MySecond.c"
+}
+]

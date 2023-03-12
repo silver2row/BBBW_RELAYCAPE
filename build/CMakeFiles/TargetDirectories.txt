@@ -1,0 +1,3 @@
+/home/gortsh/BBBW_RELAYCAPE/build/CMakeFiles/rebuild_cache.dir
+/home/gortsh/BBBW_RELAYCAPE/build/CMakeFiles/edit_cache.dir
+/home/gortsh/BBBW_RELAYCAPE/build/CMakeFiles/MySecond.dir
