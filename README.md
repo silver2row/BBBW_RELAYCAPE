@@ -3,28 +3,15 @@
 ` WIP `
 
 # BBBW_RELAYCAPE
-More Source for the Beagleboard.org BBBW and RelayCape
+More Source for the Beagleboard.org, am335x BBBW and Relay Cape
 
-` sudo apt install libtool autoconf-archive cmake make gcc g++ git python-is-python2 pkg-config linux-headers-$(uname -r) `
-
-```
-
-git clone git://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
-
-cd libgpiod
-
-./autogen.sh --enable-tools=yes --enable-bindings-cxx --enable-bindings-python --prefix=/usr/bin
-make 
-sudo make install
+`sudo apt install libgpiod-dev gpiod make cmake`
 
 ```
 
-If this build does not work and if it fails due to specific errors, please try this:
-
-` sudo apt install gpiod libgpiod-dev `
+```
 
 # WIP
-` THE USE OF LIBGPIOD on the AM335x/BEAGLEBONE BLACK WIRELESS May BREAK THE BOARD! `
 
 If libgpiod does not break w/ a compatibility issue, good. But, you may need to restart your board
 after using gpiod on the BBB or other am335x related board. 
@@ -42,7 +29,9 @@ cat /etc/dogtag: BeagleBoard.org Debian Bullseye Minimal Image 2022-03-02
 
 ```
 
-Also...I have a /boot/uEnv.txt file that looks like this idea:
+Other kernels and images may work too. There is a Spec. for specific firmware(s) and kernels, i.e. please see below.
+
+`https://docs.beagleboard.org/latest/boards/capes/cape-interface-spec.html`
 
 ```
 
@@ -52,10 +41,12 @@ https://github.com/mvduin/overlay-utils/blob/master/BBORG_RELAY-00A2.dtsi
 
 ```
 
-That .dtsi file works w/ the RelayCape and you might have to disable cape_universal!
+That .dtsi file works w/ the Relay Cape! You might have to disable cape-universal too.
 
-The file, MyThird.c, is a WIP too...
+The file, MyThird.c, is a WIP too...I found it online and am trying to change it a bit.
 
 1. I am currently trying to adjust it to suit the am335x on the BeagleBone Black Wireless
-2. The RelayCape is also in play here
-3. Currently, my system is sort of broken. So, additional steps may need to take place
+2. The Relay Cape is also in play here
+3. Additional steps may need to take place
+
+Please let me know how it goes. 
