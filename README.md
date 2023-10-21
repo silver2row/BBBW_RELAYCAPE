@@ -5,16 +5,9 @@
 # BBBW_RELAYCAPE
 More Source for the Beagleboard.org, am335x BBBW and Relay Cape
 
-`sudo apt install libgpiod-dev gpiod make cmake`
-
-```
-
-```
+`sudo apt install libgpiod-dev gpiod`
 
 # WIP
-
-If libgpiod does not break w/ a compatibility issue, good. But, you may need to restart your board
-after using gpiod on the BBB or other am335x related board. 
 
 Now, once all the above is done, one can use the source. If I am missing anytyhing, please tell me.
 

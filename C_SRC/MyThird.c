@@ -113,7 +113,7 @@ static void gpio_write(const char *dev_name, int offset, uint8_t value)
     close(rq.fd);
 }
 
-static void gpio_read(const char *dev_name, int offset)
+static void gpio_read(const char *dev_name, int offset, uint8_t value)
 {
     struct gpiohandle_request rq;
     struct gpiohandle_data data;
@@ -147,7 +147,7 @@ static void gpio_read(const char *dev_name, int offset)
 
 }
 
-static void gpio_poll(const char *dev_name, int offset)
+static void gpio_poll(const char *dev_name, int offset, uint8_t value)
 {
     struct gpioevent_request rq;
     struct pollfd pfd;
@@ -250,10 +250,10 @@ int main(int argc, char *const *argv)
         gpio_write(opt.dev, opt.offset, opt.val);
         break;
     case APP_OPT_GPIO_READ:
-        gpio_read(opt.dev, opt.offset);
+        gpio_read(opt.dev, opt.offset, opt.val);
         break;
     case APP_OPT_GPIO_POLL:
-        gpio_poll(opt.dev, opt.offset);
+        gpio_poll(opt.dev, opt.offset, opt.val);
         break;
 
     default:
