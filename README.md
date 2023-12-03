@@ -60,3 +60,7 @@ P.S. Also...a few things to note here:
 This may be fun at first but soon you will find out what you can do next! Enjoy...
 
 Seth
+
+1. The next few sections will be about the BBAI-64 and BeagleV-Ahead along with the Relay Cape.
+2. I will promote my findings and report back.
+3. Enjoy the BBB until next time...
