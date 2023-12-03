@@ -5,6 +5,8 @@
 # BBBW_RELAYCAPE
 More Source for the Beagleboard.org, am335x BBBW and Relay Cape (can be used with the BBAI-64 and BeagleV-Ahead...
 
+I think one or more of the Python3 files are exempt from use. Mostly, the source does not work as expected for now.
+
 `sudo apt install libgpiod-dev gpiod`
 
 # WIP
