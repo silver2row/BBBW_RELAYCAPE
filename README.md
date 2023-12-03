@@ -3,7 +3,7 @@
 ` WIP `
 
 # BBBW_RELAYCAPE
-More Source for the Beagleboard.org, am335x BBBW and Relay Cape
+More Source for the Beagleboard.org, am335x BBBW and Relay Cape (can be used with the BBAI-64 and BeagleV-Ahead...
 
 `sudo apt install libgpiod-dev gpiod`
 
@@ -12,9 +12,15 @@ More Source for the Beagleboard.org, am335x BBBW and Relay Cape
 Now, once all the above is done, one can use the source. If I am missing anytyhing, please tell me.
 
 ```
-kernel: 5.10.100-ti-r37
-cat /etc/dogtag: BeagleBoard.org Debian Bullseye Minimal Image 2022-03-02
+kernel: Linux BeagleBone 5.10.168-ti-r73
+cat /etc/dogtag: BeagleBoard.org Debian Bullseye Minimal Image 2023-10-07
 ```
+
+You can find this image and more at:
+
+https://forum.beagleboard.org/t/debian-11-x-bullseye-monthly-snapshot-2023-10-07/31280 
+
+I found the above combination of kernel and image to work for the Relay Cape and BBB thus far.
 
 Other kernels and images may work too. There is a Spec. for specific firmware(s) and kernels, i.e. please see below.
 
