@@ -27,9 +27,9 @@ int main()
 
     // Export the desired pin by writing to /sys/class/gpio/export
 
-    int fd = open("/dev/gpio/relay-jp3/active_low", O_WRONLY);
+    int fd = open("/sys/class/leds/relay1/brightness", O_WRONLY);
     if (fd == -1) {
-        perror("Unable to open /dev/gpio/relay-jp3/active_low");
+        perror("Unable to open FD/PORT");
         exit(1);
     }
 
@@ -37,36 +37,36 @@ int main()
     // In this case, it is /dev/gpio/relay-jp3/direction b/c of the .dtsi file and us
     // not utilizing the specific .kernel .dtbo files available from beagleboard.org.
 
-    fd = open("/dev/gpio/relay-jp3/direction", O_WRONLY);
-    if (fd == -1) {
-        perror("Unable to open /dev/gpio/relay-jp3/direction");
-        exit(1);
-    }
+//    fd = open("/sys/class/leds/relay1/brightness", O_WRONLY);
+//    if (fd == -1) {
+//        perror("Unable to open FD");
+//        exit(1);
+//    }
 
-    if (write(fd, "out", 3) != 3) {
-        perror("Error writing to /dev/gpio/relay-jp3/direction");
+    if (write(fd, "0", 3) != 3) {
+        perror("Error writing to FD");
         exit(1);
     }
 
     close(fd);
 
-    fd = open("/dev/gpio/relay-jp3/value", O_WRONLY);
-    if (fd == -1) {
-        perror("Unable to open /dev/gpio/relay-jp3/value");
-        exit(1);
-    }
+//    fd = open("/dev/gpio/relay-jp3/value", O_WRONLY);
+//    if (fd == -1) {
+//        perror("Unable to open FD");
+//        exit(1);
+//    }
 
     // Toggle LED 50 ms on, 50ms off, 100 times (10 seconds)
 
     for (int i = 0; i < 100; i++) {
         if (write(fd, "1", 1) != 1) {
-            perror("Error writing to /dev/gpio/relay-jp3/value");
+            perror("Error writing to FD");
             exit(1);
         }
         usleep(50000);
 
         if (write(fd, "0", 1) != 1) {
-            perror("Error writing to /dev/gpio/relay-jp3/value");
+            perror("Error writing to FD");
             exit(1);
         }
         usleep(50000);

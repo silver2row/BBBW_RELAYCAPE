@@ -19,7 +19,7 @@
 
 int main(int argc, char **argv)
 {
-  const char *chipname = "gpiochip3";
+  const char *chipname = "gpiochip0";
   struct gpiod_chip *chip;
   struct gpiod_line *lineLED;    // a LED from relay-jp3
                                  // located at /dev/gpio/relay-jp3
@@ -35,14 +35,14 @@ int main(int argc, char **argv)
   }
 
   // Open GPIO lines
-  lineLED = gpiod_chip_get_line(chip, 16);
+  lineLED = gpiod_chip_get_line(chip, 20);
   if (!lineLED) {
     perror("Get line failed\n");
     return 1;
   }
 
   // Open LED lines for output
-  ret = gpiod_line_request_output(lineLED, "relay-jp3", 0);
+  ret = gpiod_line_request_output(lineLED, "relay1", 0);
   if (ret < 0) {
     perror("Request line as output failed\n");
     return 1;

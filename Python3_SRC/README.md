@@ -1,10 +1,18 @@
-# This is short idea on related items:
+# These are short ideas on related items:
 
-` You will need a short udev rule from https://github.com/mvduin/overlay-utils/blob/master/BBORG_RELAY-00A2.dtsi `
+This should be helpful for handling such a Cape, the RelayCape, in Python3.
 
-In that file, you will find a short udev rule to place at /etc/udev/rules.d/ and this will create
-the symlinks for /dev/gpio/relay-jp1/2/3/4/ from /sys/class/gpio/.
+`Enjoy`
 
-This should be helpful for handling such a Cape, the RelayCape in Python3.
+```
+MyFirst.py and MySecond.py are starter scripts. 
+What will you make?
+```
 
-` Enjoy `
+What will you do with the starter scripts? 
+
+Build a GPIO based, `/sys/class/leds/*`, goliath or just switch on the sprinklers?
+
+With whatever your endeavor is currently, do good and keep it up!
+
+Seth
